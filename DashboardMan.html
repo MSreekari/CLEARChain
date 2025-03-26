@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif; 
+        }
+        body {
+            display: flex;
+            height: 100vh; 
+            padding: 20px; 
+            font-family: Arial, sans-serif; 
+            color: #100f0f; 
+            background-color: #020419; 
+        }
+
+        .sidebar {
+            width: 250px;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar button {
+            padding: 10px;
+            border: none;
+            background: #f76724;
+            color: rgb(22, 21, 21); 
+            font-size: 16px; 
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar button:hover {
+            background: #f76724;
+        }
+
+        .main-content {
+            flex: 1;
+            background: white;
+            margin-left: 20px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        label {
+            flex: 1;
+            font-size: 16px;
+        }
+
+        input, select {
+            flex: 2;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        } 
+        .truck-section {
+            margin-top: 15px;
+        }
+
+        .truck-entry {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .add-truck button {
+            background: #f67c42;
+            border: none;
+            color: rgb(12, 12, 12);
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-truck button:hover {
+            background: #d55f2a; 
+        }
+
+        .add-truck button:hover {
+            background: #d55f2a;
+        }
+
+        .finish-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .finish-btn button {
+            padding: 0.8rem 2.4rem;
+            font-size: 1rem;
+            font-weight: 50px; 
+            margin-top: 40px; 
+            margin-left: 350px; 
+            color: #0e0e0e;
+            background-color: #FF5B0F;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .finish-btn button:hover {
+            background: #d55f2a;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <button>Previous Transits</button>
+        <button>Add Transits</button>
+        <button>Ongoing Transits</button>
+    </div>
+
+    <div class="main-content">
+        <h2>Dashboard</h2>
+
+        <div class="form-group">
+            <label for="transitID">Transit ID</label>
+            <input type="text" id="transitID"> 
+        </div>
+
+        <div class="form-group">
+            <label for="totalQuantity">Total Quantity</label>
+            <input type="text" id="totalQuantity"> 
+        </div>
+
+        <div class="form-group">
+            <label for="pickup">Pickup Location</label>
+            <input type="text" id="pickup">
+        </div>
+
+        <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" id="destination">
+        </div>
+
+        <div class="form-group">
+            <label for="numTrucks">Total Number of Trucks</label>
+            <input type="number" id="numTrucks">
+        </div>
+
+        <div class="form-group">
+            <label for="truckIDs">Truck IDs</label>
+            <input type="text" id="truckIDs">
+        </div>
+
+        <div class="truck-section">
+            <h3>Truck Details</h3>
+            <div id="truck-container"> 
+                <!-- Truck details will be added here dynamically -->
+            </div>
+            <button class="add-truck" onclick="addTruck()">+ Add Truck</button>
+        </div>
+
+        <div class="finish-btn">
+            <button>Finish</button>
+        </div>
+    </div>
+    <script>
+        let truckCount = 0;
+
+        function addTruck() {
+            if (truckCount >= 10) {
+                alert("Maximum 10 trucks allowed.");
+                return;
+            }
+
+            truckCount++;
+
+            const truckContainer = document.getElementById("truck-container");
+
+            const truckEntry = document.createElement("div");
+            truckEntry.classList.add("truck-entry");
+
+            truckEntry.innerHTML = `
+                <label>Truck ID ${truckCount}:</label>
+                <select>
+                    <option>Select Driver</option>
+                    <option>Driver 1</option> 
+                    <option>Driver 2</option>
+                </select>
+                <input type="text" placeholder="Quantity">
+            `;
+
+            truckContainer.appendChild(truckEntry);
+        }
+    </script>
+</body>
+</html>
