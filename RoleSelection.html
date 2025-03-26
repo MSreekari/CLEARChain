@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExploitXcel - Choose Role</title>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #020419;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        padding: 10px 40px; 
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .highlight {
+        color: #ff6600;
+    }
+    .container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    h1 {
+        font-size: 50px; 
+    }
+    .subheading {
+        font-size: 35px; 
+        color: #ebe3e3; 
+        margin-bottom: 40px; 
+    }
+    .roles {
+        display: flex;
+        justify-content: center; 
+        flex-direction: row; 
+        gap: 40px;
+        margin-top: 30px; 
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .role-card {
+        background-color: #d5d6d8; 
+        padding: 30px;
+        width: 550px; 
+        height: 300px;
+        border-radius: 20px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        transition: all 0.3s ease; 
+    }
+
+    .role-card:hover {
+        background-color: #babcbf; 
+        transform: scale(1.05); 
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6); 
+    }   
+
+    .attacker-title, .defender-title {
+        color: #111110;
+        font-size: 22px; 
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .description {
+        font-size: 20px;
+        margin: 15px 0;
+    }
+
+    .icon1 {
+        width: 140px; 
+    }
+    .icon2 {
+        width: auto; 
+        padding-top: 20px; 
+        padding-bottom: 10px; 
+    }
+
+    .start-btn {
+        width: 120px; 
+        padding: 12px;
+        background: #FF5B0F; 
+        border: none;
+        border-radius: 50px; 
+        color: rgb(11, 1, 1);
+        font-size: 1rem;
+        margin-top: 20px;  
+        cursor: pointer; 
+        transition: 0.3s;
+        display: block; 
+        margin-left: auto;  
+        margin-right: auto; 
+    }
+
+    .start-btn:hover {
+        background-color: #cc5200;
+    }
+
+</style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">CLEAR<span class="highlight">Chain</span></div>
+    </header>
+
+    <div class="container">
+        <h1>Choose Your <span class="highlight">Role</span></h1>
+        <p class="subheading">Select your role to start the challenge</p>
+        <div class="roles">
+            <div class="role-card">
+                <h2 class="attacker-title">MANUFACTURER</h2>
+                <img src="Icon1.png" alt="Manufacturer Icon" class="icon1"> 
+                <button class="start-btn">Get Started</button> 
+            </div>
+            <div class="role-card">
+                <h2 class="defender-title">CLIENT</h2> 
+                <img src="Icon2.png" alt="Defender Icon" class="icon2">
+                <button class="start-btn">Get Started</button> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
