@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,
+  400;0,700;1,300;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>ClearChain</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; 
+    }
+  
+    body {
+        font-family: "Inria Sans", sans-serif; 
+        color: #ffffff;
+        background-color: #020419;
+        line-height: 1.6;
+    }
+  
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+  
+    ul {
+        list-style: none;
+    }
+    .navbar {
+        display: flex;
+        margin-top: 15px;
+        font-family: "Inria Sans", serif;
+        align-items: center; 
+        height: 70px; 
+        padding: 1rem 2rem;
+        background-color: #020419;
+    }
+    .logo {
+        font-size: 40px;
+        font-weight: bold;
+        color: #f25822;
+        margin-right: 90px; 
+        margin-left: 10px; 
+    }
+    .logo span {
+        color: #ffffff; 
+    }
+    .nav-links {
+        display: flex;
+        gap: 2.9rem;
+    }
+    .nav-links li a {
+        font-size: 1.4rem;
+        color: #ffffff;
+        transition: color 0.3s;
+    }
+    .nav-links li a:hover {
+        color: #f25822;
+    }
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: space-around; 
+        margin-top: 20px; 
+        gap: 20px; 
+    }
+    
+    .main-content {
+        max-width: 45%; 
+        font-family: "Montserrat", serif;
+        font-weight: 400; 
+        font-style: normal; 
+        opacity: 0;
+        transform: translateX(-100%); 
+        animation: slideInLeft 1s ease-out forwards;
+    }
+    
+    #lottie-animation {
+        max-width: 500px; /* Adjust size for better fit */
+        height: auto; /* Prevent excessive height */
+        display: flex;
+        align-items: center; 
+    } 
+  @keyframes slideInLeft {
+      0% {
+          opacity: 0;
+          transform: translateX(-100%);
+      }
+      100% {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+  @keyframes slideInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    .main h1 {
+        font-size: 2.5rem; 
+        margin-bottom: 1rem;
+    }
+    main h2 {
+        font-family: "Abhaya Libre", serif; 
+    } 
+    .join-btn {
+        padding: 0.8rem 2.4rem;
+        font-size: 1rem;
+        font-weight: 50px; 
+        margin-top: 40px; 
+        color: #0e0e0e;
+        background-color: #FF5B0F;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .join-btn:hover {
+        background-color: #d0481d; 
+    } 
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">CLEAR<span>Chain</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li> 
+        <li><a href="#">Features</a></li> 
+      </ul>
+    </nav>
+  </header>
+  <section class="main">
+    <div class="main-content">
+      <h1>“From Manufacturing to Delivery- <span style="color: #FF5B0F;">VERIFIED</span>, Always.”</h1> 
+      <h2>Seamless. Secure. Transparent. In a world where authenticity and traceability define success, 
+        we bring the power of AI and Blockchain to transform supply chains. 
+        </h2> 
+      <button class="join-btn">Get Started</button> 
+    </div> 
+    <div id="lottie-animation"></div> 
+  </section>  
+  <script>
+    var animation = lottie.loadAnimation({
+        container: document.getElementById("lottie-animation"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "Animation1.json" 
+    });
+</script>
+</body>
+</html>
