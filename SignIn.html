@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearChain - Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: "Inria Sans", sans-serif;
+        }
+        body {
+            background-color: #020419;
+            color: white;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            width: 80%; 
+            max-width: 1400px; 
+            height: 90vh; 
+            background: transparent; 
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .left-panel {
+            flex: 0.5; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; 
+            text-align: center; 
+            padding: 20px;
+        }
+        .left-panel h1 {
+            color: white;
+            font-size: 40px; 
+        }
+        .left-panel span {
+            color: #f25822; 
+        }
+        #lottie-animation {
+            width: 100%;
+            max-width: 590px; 
+            height: 1000px; 
+        }
+        .right-panel {
+            flex: 0.5;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 80vh; 
+        }
+        .form-group {
+            margin: 30px 0; 
+        }
+        .form-input {
+            width: 100%;
+            padding: 16px; 
+            border-radius: 50px; 
+            border: none;
+            font-size: 1rem;
+            background: #ccc;
+            color: #000;
+        }
+        .right-panel h2 {
+            font-size: 35px;  
+            margin-bottom: 70px; 
+            margin-top: 0px; 
+            align-self: flex-start; 
+        }
+        .right-panel h2 span {
+            color: #f25822;
+        }
+        .form-group {
+            position: relative;
+            margin: 30px 0;
+        }
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            padding-right: 40px; 
+            border-radius: 50px; 
+            border: none;
+            font-size: 1rem;
+            background: #ccc;
+            color: #000;
+        }
+        .form-input::placeholder{
+            color: #000; 
+        }
+        .input-icon {
+            position: absolute;
+            right: 12px; 
+            top: 50%; 
+            font-size: 1.3rem; 
+            transform: translateY(-50%); 
+            color: black; 
+        }
+        .form-input:focus {
+            outline: 2px solid #f25822;
+        }
+        .register-btn {
+            width: 120px; 
+            padding: 12px;
+            background: #FF5B0F;
+            border: none;
+            border-radius: 50px; 
+            color: rgb(11, 1, 1);
+            font-size: 1rem;
+            margin-top: 30px; 
+            margin-left: 200px;  
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        .register-btn:hover {
+            background: #d0481d;
+        }
+        .login-link {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            text-align: center; 
+            font-size: 19px; 
+        }
+        .login-link a {
+            color: #f25822;
+            text-decoration: none; 
+            font-weight: bold;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>CLEAR<span>Chain</span></h1>
+            <div id="lottie-animation"></div> 
+            <p class="login-link">Didn't Sign-In?<a href="#">Click here</a></p> 
+        </div>
+        <div class="right-panel">
+            <form>
+                <div class="form-group">
+                    <i class="fa-solid fa-user input-icon"></i> 
+                    <input type="text" class="form-input" placeholder="Enter Full Name">
+                </div>
+                <div class="form-group">
+                    <i class="fa-solid fa-industry input-icon"></i> 
+                    <input type="text" class="form-input" placeholder="Enter Company Name"> 
+                </div>
+                <div class="form-group">
+                    <i class="fa-solid fa-lock input-icon"></i> 
+                    <input type="password" class="form-input" placeholder="Enter URN"> 
+                </div>               
+                <button type="submit" class="register-btn">Register</button>
+            </form>            
+        </div>
+    </div>
+    <script>
+        var animation = lottie.loadAnimation({
+            container: document.getElementById("lottie-animation"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "Animation7.json" 
+        });
+    </script>
+</body>
+</html>
