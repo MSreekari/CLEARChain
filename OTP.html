@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearChain - Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: "Inria Sans", sans-serif;
+        }
+        body {
+            background-color: #020419;
+            color: white;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            width: 80%; 
+            max-width: 1400px; 
+            height: 90vh; 
+            background: transparent; 
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            justify-content: space-between; /* Ensures space between left and right panels */
+        }
+        
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; 
+            flex: 1; /* Makes it take up 50% of the space */
+            padding-left: 40px; 
+        }        
+        .left-panel h1{
+            color: #f25822; 
+            font-size: 40px; 
+        }
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; /* Center OTP fields */
+            flex: 1; /* Makes it take up the remaining space */
+        }
+        
+        .otp-text {
+            text-align: center;
+        }
+        
+        .otp-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; 
+            margin-top: 20px; /* Reduced margin */
+        }
+        
+        .otp-input {
+            width: 60px;
+            height: 60px; 
+            text-align: center; 
+            font-size: 20px;
+            border: 2px solid #ccc; 
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .otp-input:focus {
+            border-color: #f25822; 
+            box-shadow: 0 0 5px rgba(246, 124, 31, 0.959); 
+        }        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>CLEAR<span style="color: #ccc;">Chain</span></h1> 
+            <div id="lottie-animation"></div>        
+        </div> 
+    
+        <div class="right-panel">
+            <div class="otp-text">
+                <h1 style="color: #f25822;">Enter the OTP</h1> 
+                <p>Enter the OTP sent to your email address</p> 
+            </div>     
+            <div class="otp-container">
+                <input type="text" class="otp-input" maxlength="1">
+                <input type="text" class="otp-input" maxlength="1">
+                <input type="text" class="otp-input" maxlength="1"> 
+                <input type="text" class="otp-input" maxlength="1"> 
+                <input type="text" class="otp-input" maxlength="1">
+                <input type="text" class="otp-input" maxlength="1">
+            </div>  
+        </div>          
+    </div>    
+    <script>
+        var animation = lottie.loadAnimation({
+            container: document.getElementById("lottie-animation"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "Animation7.json" 
+        }); 
+        const inputs = document.querySelectorAll(".otp-input");
+
+    inputs.forEach((input, index) => {
+        input.addEventListener("input", (e) => {
+            if (e.target.value && index < inputs.length - 1) {
+                inputs[index + 1].focus(); 
+            }
+        });
+
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace" && index > 0 && !e.target.value) {
+            inputs[index - 1].focus();
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
